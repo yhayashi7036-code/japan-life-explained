@@ -2,6 +2,6 @@
 Japan Life Explained 有20篇简体中文指南，说明办理顺序、日语制度名和官方确认渠道。
 
 中文目录：
-https://yhayashi-dev.github.io/japan-life-explained/#zh-guides
+https://yhayashi7036-code.github.io/japan-life-explained/#zh-guides
 
 译文由AI辅助并经独立AI核对，尚未经母语读者或实际用户审核。个人手续请以相关机构的最新说明为准。
