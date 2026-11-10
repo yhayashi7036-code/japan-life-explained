@@ -4,7 +4,7 @@
   const prior = window.__suzumeAnalyticsV1;
   if (prior) { prior.visit(); return; }
   const c = window.SuzumeAnalyticsConfig;
-  const origins = ['https://yhayashi-dev.github.io', 'https://paycheck-insight-dfnvaodwxttypa7gtdouhj.streamlit.app'];
+  const origins = ['https://yhayashi-dev.github.io', 'https://yhayashi7036-code.github.io', 'https://paycheck-insight-dfnvaodwxttypa7gtdouhj.streamlit.app'];
   if (!c || c.enabled !== true || !/^G-[A-Z0-9]{6,20}$/.test(c.measurementId || '') || window.self !== window.top || !origins.includes(c.origin) || location.origin !== c.origin || !/^[A-Za-z0-9_-]+$/.test(c.siteId || '') || !c.basePath?.startsWith('/') || !c.basePath.endsWith('/')) return;
   const id = c.measurementId, cookieName = 'su_analytics_consent_' + c.siteId, gaPrefix = 'su_' + c.siteId + '_ga';
   let granted = false, started = false, lastPath = '', loading = false;
@@ -38,7 +38,7 @@
     if (['youtube.com','www.youtube.com','m.youtube.com','youtu.be'].includes(host)) return {bucket:'youtube', referrer:u.origin + '/'};
     if (['google.com','www.google.com','google.co.jp','www.google.co.jp'].includes(host)) return {bucket:'google', referrer:u.origin + '/'};
     if (['bing.com','www.bing.com'].includes(host)) return {bucket:'bing', referrer:u.origin + '/'};
-    if (host === 'yhayashi-dev.github.io') {
+    if (['yhayashi-dev.github.io', 'yhayashi7036-code.github.io'].includes(host)) {
       const prefix = '/' + u.pathname.split('/')[1] + '/';
       const allowed = ['/kurashi-seido-portal/','/policy-guide/','/japan-life-explained/','/manga-world/','/my-chaldea/','/tokyo-support-finder/','/zaisei-no-mikata/','/economy-explained/'];
       if (allowed.includes(prefix)) return {bucket:prefix === c.basePath ? 'internal' : prefix === '/kurashi-seido-portal/' ? 'portal' : 'related_site', referrer:u.origin + prefix};
